@@ -1,15 +1,15 @@
 import products.*
 
-class Cake constructor(title: String, price: Double, var dough: String, var cream: String, var weight: Double, var calories: Double) : Product(title, price){
+open class Cake constructor(title: String, price: Double, var dough: String, var cream: String, var weight: Double, var calories: Double) : Product(title, price){
 
-    fun getView(): String {
+    open fun getView(): String {
         return "Пероженноле из $dough теста с $cream кремом";
     }
-    fun getMinCalories(): Double {
+    open fun getMinCalories(): Double {
         return weight / calories;
     }
 
-    fun calcTotalCalories(cakeCount: Int): Double {
+    open fun calcTotalCalories(cakeCount: Int): Double {
         return cakeCount.toDouble() * calories;
     }
 }
